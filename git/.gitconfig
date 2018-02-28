@@ -1,0 +1,8 @@
+[user]
+	name = Quentin Young
+	email = invalid@invalid.invalid
+	signingkey = changeme
+[color]
+	ui = auto
+[core]
+	editor = vim
