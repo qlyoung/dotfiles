@@ -21,12 +21,13 @@ colorscheme sourcerer
 hi Search cterm=NONE ctermfg=white ctermbg=blue
 
 "clang-format
-map <C-k> :pyf /usr/local/bin/clang-format.py<cr>
-imap <C-k> <c-o>:pyf /usr/local/bin/clang-format.py<cr>
+map <C-k> :pyf /usr/local/bin/clang-format.py<CR>
+imap <C-k> <c-o> :pyf /usr/local/bin/clang-format.py<CR>
 let g:clang_format_path='clang-format-5.0'
 
 "YCM
 set completeopt-=preview
+let g:ycm_enable_diagnostic_signs=0
 
 "airline
 let g:airline_powerline_fonts = 1
@@ -41,6 +42,8 @@ command RemoveTrailingWhitespace %s/\s\+$//
 "plugins
 call plug#begin()
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 Plug 'oblitum/YouCompleteMe'
 call plug#end()
 
