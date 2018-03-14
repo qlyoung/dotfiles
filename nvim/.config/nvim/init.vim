@@ -34,6 +34,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='base16'
 set laststatus=2
 
+"generate RST-compatible tables
+let g:table_mode_corner_corner='+'
+let g:table_mode_header_fillchar='='
+
 "misc
 command RemoveTrailingWhitespace %s/\s\+$//
 "automatically remove trailing whitespace on :w
@@ -47,4 +51,3 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'oblitum/YouCompleteMe'
 call plug#end()
-
