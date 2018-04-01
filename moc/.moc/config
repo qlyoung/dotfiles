@@ -1,0 +1,29 @@
+# the illest theme
+XTermTheme = deephouse
+
+# music directory
+MusicDir = "~/music"
+
+# want fullscreen directory by default; tab to get to playlist
+Layout1 = directory(0,0,100%,100%)
+
+# control master volume by default
+AlsaMixer1 = Master
+
+# preload all file times
+ShowTime = yes
+
+# set config directory (unnecessary)
+MOCDir = ~/.moc
+
+# silent seek 1 second at a time
+# SilentSeekTime = 1
+
+# allows 24 bit audio if soundcard supports it (can break mp3 playback)
+Allow24bitOutput = yes
+
+# scroll to keep currently playing file in sight
+FollowPlayedFile = yes
+
+# messages show for 1 second
+MessageLingerTime = 1

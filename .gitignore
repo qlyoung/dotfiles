@@ -43,6 +43,34 @@ nvim/.config/nvim/autoload/*
 !nvim/.config/nvim/syntax/
 !nvim/.config/nvim/syntax/*
 
+# beets
+!beets/
+!beets/.config
+!beets/.config/beets
+
+# i3
+!i3
+!i3/.config
+!i3/.config/i3
+
+# i3lock-fancy
+!i3lock-fancy/
+
+# moc
+!moc/
+
+# pulse
+!pulse/
+
+# urxvt
+!urxvt/
+
+# x
+!x/
+
+# xdg
+!xdg/
+
 # git
 !git
 git/*

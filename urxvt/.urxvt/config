@@ -1,0 +1,55 @@
+! This is an X resources file. It should be loaded with
+! $ xrdb -merge .urxvt
+
+! $TERM
+URxvt*termName: rxvt-unicode
+
+! font
+! URxvt*font:               xft:Ubuntu Mono:medium:pixelsize=11,style=regular
+URxvt*font:                 -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+URxvt*boldFont:             -xos4-terminesspowerline-bold-r-normal--12-120-72-72-c-60-iso10646-1
+URxvt*letterSpace:          1
+
+! url launcher
+!URxvt*urlLauncher:          chromium-browser
+
+! scrolling
+URxvt*scrollBar:            false
+URxvt*scrollTtyOutput:      true
+URxvt*scrollTtyKeypress:    true
+URxvt*scrollWithBuffer:     true
+URxvt*secondaryScreen:      true
+URxvt*secondaryScroll:      true
+URxvt.mouseWheelScrollPage: false
+
+! cursor
+URxvt*cursorUnderline:      true
+
+! scripts
+URxvt.perl-ext-common:      vtwheel
+URxvt.perl-ext:             default,matcher
+
+! misc
+URxvt*tripleclickwords:     true
+URxvt*urlLauncher:          /usr/bin/chromium-browser
+URxvt*matcher.Button:       1
+
+! colors
+URxvt*background:           #151515
+URxvt*foreground:           #ebebeb
+URxvt*color0:               #2d2d2d
+URxvt*color1:               #705050
+URxvt*color2:               #60b48a
+URxvt*color3:               #dfaf8f
+URxvt*color4:               #9ab8d7
+URxvt*color5:               #dc8cc3
+URxvt*color6:               #8cd0d3
+URxvt*color7:               #dcdcdc
+URxvt*color8:               #709080
+URxvt*color9:               #dca3a3
+URxvt*color10:              #72d5a3
+URxvt*color11:              #f0dfaf
+URxvt*color12:              #94bff3
+URxvt*color13:              #ec93d3
+URxvt*color14:              #93e0e3
+URxvt*color15:              #ffffff

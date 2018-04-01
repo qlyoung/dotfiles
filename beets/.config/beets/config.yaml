@@ -1,0 +1,18 @@
+library: library.db
+directory: ~/music/
+import:
+    move: yes
+    write: yes
+    timid: no
+    resume: ask
+    quiet_fallback: asis
+paths:
+    default: $albumartist/$album%aunique{}/$track $title
+    singleton: $artist/singles/$title
+    comp: Miscellaneous/compilations/$album%aunique{}/$track $title
+plugins: fetchart ftintitle missing
+fetchart:
+    cautious: true
+    enforce_ration: true
+    minwidth: 700
+    maxwidth: 700

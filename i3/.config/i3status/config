@@ -1,0 +1,85 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        color_good = "#99d6ff"
+        color_degraded = "#99d6ff"
+        color_bad = "#99d6ff"
+        interval = 1
+}
+
+order += "wireless wlp3s0"
+order += "ethernet enp0s25"
+# order += "path_exists VPN"
+# order += "run_watch DHCP"
+# order += "ipv6"
+# order += "disk /"
+# order += "load"
+# order += "cpu_temperature 0"
+order += "volume master"
+order += "battery 0"
+order += "tztime local"
+
+wireless wlp3s0 {
+        format_up = "%essid %quality"
+        format_down = "(offline)"
+}
+
+ethernet enp0s25 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "%ip (%speed)"
+        format_down = ""
+}
+
+path_exists VPN {
+        # file containing the PID of a vpnc process
+        path = "/proc/sys/net/ipv4/conf/tun0"
+        format = "VPN"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhcpcd-*.pid"
+        format = "DHCP"
+}
+
+ipv6 {
+        format_up = "%ip"
+        format_down = ""
+}
+
+disk "/" {
+        format = "%free"
+}
+
+load {
+        format = "%5min"
+}
+
+cpu_temperature 0 {
+        format = "%degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp2_input"
+}
+
+battery 0 {
+        format = "%status %percentage"
+        format_down = ""
+
+        # these status commands require i3status version > 2015-10-07
+        status_chr = "C"
+        status_bat = "B"
+        status_full = "F"
+
+        path = "/sys/class/power_supply/BAT0/uevent"
+        low_threshold = 10
+}
+
+volume master {
+        format = "%volume"
+        format_muted = "%volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+        format = "%m/%d %H:%M"
+}
