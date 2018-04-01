@@ -1,0 +1,9 @@
+*
+
+!.gitignore
+
+!.moc
+.moc/*
+!.moc/config
+!.moc/themes/
+!.moc/themes/*

@@ -1,0 +1,8 @@
+*
+
+!.gitignore
+
+!.urxvt/
+!.urxvt/config
+!.urxvt/ext/
+!.urxvt/ext/vtwheel
