@@ -6,52 +6,21 @@
 
 # tmux
 !tmux/
-!tmux/.tmux.conf
-!tmux/.tmux/
-tmux/.tmux/*
-!tmux/.tmux/plugins/
-tmux/.tmux/plugins/*
-!tmux/.tmux/plugins/tpm/
-!tmux/.tmux/plugins/tpm/*
 
 # fish
 !fish/
-!fish/.config/
-!fish/.config/fish/
-fish/.config/fish/*
-!fish/.config/fish/config.fish
 
 # fonts
 !fonts/
-fonts/*
-!fonts/*.otf
-!fonts/*.ttf
-!fonts/*.pcf
 
 # neovim
 !nvim/
-!nvim/.config/
-nvim/.config/*
-!nvim/.config/nvim/
-nvim/.config/nvim/*
-!nvim/.config/nvim/init.vim
-!nvim/.config/nvim/autoload/
-nvim/.config/nvim/autoload/*
-!nvim/.config/nvim/autoload/plug.vim
-!nvim/.config/nvim/colors/
-!nvim/.config/nvim/colors/*
-!nvim/.config/nvim/syntax/
-!nvim/.config/nvim/syntax/*
 
 # beets
 !beets/
-!beets/.config
-!beets/.config/beets
 
 # i3
 !i3
-!i3/.config
-!i3/.config/i3
 
 # i3lock-fancy
 !i3lock-fancy/

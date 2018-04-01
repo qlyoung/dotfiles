@@ -1,0 +1,8 @@
+*
+
+!.gitignore
+
+!.config/
+!.config/fish/
+.config/fish/*
+!.config/fish/config.fish

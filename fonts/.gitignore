@@ -1,0 +1,7 @@
+*
+
+!.gitignore
+
+!*.otf
+!*.ttf
+!*.pcf

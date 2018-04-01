@@ -1,0 +1,16 @@
+*
+
+!.gitignore
+
+!.config/
+.config/*
+!.config/nvim/
+.config/nvim/*
+!.config/nvim/init.vim
+!.config/nvim/autoload/
+.config/nvim/autoload/*
+!.config/nvim/autoload/plug.vim
+!.config/nvim/colors/
+!.config/nvim/colors/*
+!.config/nvim/syntax/
+!.config/nvim/syntax/*
