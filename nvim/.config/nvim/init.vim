@@ -23,7 +23,7 @@ hi Search cterm=NONE ctermfg=white ctermbg=blue
 "clang-format
 map <C-k> :pyf /usr/local/bin/clang-format.py<CR>
 imap <C-k> <c-o> :pyf /usr/local/bin/clang-format.py<CR>
-let g:clang_format_path='clang-format-5.0'
+let g:clang_format_path='clang-format-7'
 
 "YCM
 set completeopt-=preview
