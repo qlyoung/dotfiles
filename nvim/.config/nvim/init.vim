@@ -30,10 +30,10 @@ set completeopt-=preview
 let g:ycm_enable_diagnostic_signs=0
 
 "airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 let g:airline_theme='base16'
 "spaces are allowed after tabs, but not in between
-let g:airline#extensions#whitespace#mixed_indent_algo = 2
+let g:airline#extensions#whitespace#mixed_indent_algo=2
 set laststatus=2
 
 "generate RST-compatible tables
