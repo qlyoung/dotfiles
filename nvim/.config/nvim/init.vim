@@ -23,7 +23,7 @@ hi Search cterm=NONE ctermfg=white ctermbg=blue
 "clang-format
 map <C-k> :pyf /usr/local/bin/clang-format.py<CR>
 imap <C-k> <c-o> :pyf /usr/local/bin/clang-format.py<CR>
-let g:clang_format_path='clang-format-7'
+let g:clang_format_path='/usr/bin/clang-format'
 
 "YCM
 set completeopt-=preview
@@ -32,6 +32,8 @@ let g:ycm_enable_diagnostic_signs=0
 "airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16'
+"spaces are allowed after tabs, but not in between
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
 set laststatus=2
 
 "generate RST-compatible tables
@@ -49,5 +51,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
-Plug 'oblitum/YouCompleteMe'
+" Plug 'oblitum/YouCompleteMe'
+Plug 'ambv/black'
+Plug 'universal-ctags/ctags'
 call plug#end()
