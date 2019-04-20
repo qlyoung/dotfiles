@@ -54,4 +54,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'oblitum/YouCompleteMe'
 Plug 'ambv/black'
 Plug 'universal-ctags/ctags'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
