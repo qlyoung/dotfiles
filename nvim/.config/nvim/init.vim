@@ -16,6 +16,8 @@ syntax on
 set backspace=indent,eol,start
 "set color scheme
 colorscheme sourcerer
+"disable folding
+set nofoldenable
 
 "highlight colors
 hi Search cterm=NONE ctermfg=white ctermbg=blue
@@ -54,7 +56,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'oblitum/YouCompleteMe'
 Plug 'ambv/black'
 Plug 'universal-ctags/ctags'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'hiphish/jinja.vim'
 call plug#end()
