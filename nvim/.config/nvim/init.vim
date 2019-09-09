@@ -59,4 +59,5 @@ Plug 'universal-ctags/ctags'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'hiphish/jinja.vim'
+Plug 'nathanalderson/yang.vim'
 call plug#end()

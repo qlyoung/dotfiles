@@ -14,3 +14,5 @@
 !.config/nvim/colors/*
 !.config/nvim/syntax/
 !.config/nvim/syntax/*
+!.config/nvim/indent/
+!.config/nvim/indent/*
