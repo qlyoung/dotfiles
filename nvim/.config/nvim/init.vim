@@ -14,10 +14,11 @@ filetype plugin indent on
 syntax on
 "allow backspacing over most things
 set backspace=indent,eol,start
-"set color scheme
-colorscheme sourcerer
 "disable folding
 set nofoldenable
+
+"gd to jump to definition
+nmap <silent> gd <Plug>(coc-definition)
 
 "highlight colors
 hi Search cterm=NONE ctermfg=white ctermbg=blue
@@ -26,10 +27,6 @@ hi Search cterm=NONE ctermfg=white ctermbg=blue
 map <C-k> :pyf /usr/local/bin/clang-format.py<CR>
 imap <C-k> <c-o> :pyf /usr/local/bin/clang-format.py<CR>
 let g:clang_format_path='/usr/bin/clang-format'
-
-"YCM
-set completeopt-=preview
-let g:ycm_enable_diagnostic_signs=0
 
 "airline
 let g:airline_powerline_fonts=1
@@ -60,4 +57,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'hiphish/jinja.vim'
 Plug 'nathanalderson/yang.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
+
+"set color scheme
+"colorscheme sourcerer
+colorscheme nord
