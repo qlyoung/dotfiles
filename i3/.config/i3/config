@@ -3,12 +3,22 @@
 # modkey
 set $mod Mod4
 
+#---- graphics & display --------------------------------------------
+
+# Thinkpad X1
+exec_always xrandr --dpi 450
+exec reload
+
+# DisplayPort 1
+exec_always xrandr --output DP1 --mode 2560x1440
+
+# screen temperature
+exec redshift
 
 #---- miscellaneous settings ----------------------------------------
 
 # set desktop wallpaper
-exec_always xrandr --output DP1 --mode 2560x1440
-exec_always feh --bg-fill /opt/wallpaper.png
+exec_always feh --bg-fill /opt/wallpaper.jpg
 
 # screen locker
 # exec xss-lock -- i3lock-fancy.sh
@@ -17,7 +27,7 @@ exec_always feh --bg-fill /opt/wallpaper.png
 exec_always setxkbmap -layout us -option caps:swapescape
 
 # set keyboard repeat rate
-exec xset r 200 20
+exec xset r rate 200 20
 
 # start compton
 exec compton --config ~/.config/compton/config

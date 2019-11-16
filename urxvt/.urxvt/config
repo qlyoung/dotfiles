@@ -6,8 +6,8 @@ URxvt*termName: rxvt-unicode
 
 ! font
 ! URxvt*font:               xft:Ubuntu Mono:medium:pixelsize=11,style=regular
-URxvt*font:                 -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
-URxvt*boldFont:             -xos4-terminesspowerline-bold-r-normal--12-120-72-72-c-60-iso10646-1
+URxvt.font:                 xft:terminus:size=2.8
+URxvt*boldFont:             xft:terminus:size=3
 URxvt*letterSpace:          1
 
 ! url launcher
@@ -34,22 +34,74 @@ URxvt*tripleclickwords:     true
 URxvt*urlLauncher:          /usr/bin/chromium-browser
 URxvt*matcher.Button:       1
 
-! colors
-URxvt*background:           #151515
-URxvt*foreground:           #ebebeb
-URxvt*color0:               #2d2d2d
-URxvt*color1:               #705050
-URxvt*color2:               #60b48a
-URxvt*color3:               #dfaf8f
-URxvt*color4:               #9ab8d7
-URxvt*color5:               #dc8cc3
-URxvt*color6:               #8cd0d3
-URxvt*color7:               #dcdcdc
-URxvt*color8:               #709080
-URxvt*color9:               #dca3a3
-URxvt*color10:              #72d5a3
-URxvt*color11:              #f0dfaf
-URxvt*color12:              #94bff3
-URxvt*color13:              #ec93d3
-URxvt*color14:              #93e0e3
-URxvt*color15:              #ffffff
+
+! Nord color scheme
+! -----------------
+
+! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
+
+! Project:    Nord XResources
+! Version:    0.1.0
+! Repository: https://github.com/arcticicestudio/nord-xresources
+! License:    MIT
+
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+URxvt*foreground:   nord4
+URxvt*background:   nord0
+URxvt*cursorColor:  nord4
+URxvt*fading: 35
+URxvt*fadeColor: nord3
+
+URxvt*color0: nord1
+URxvt*color1: nord11
+URxvt*color2: nord14
+URxvt*color3: nord13
+URxvt*color4: nord9
+URxvt*color5: nord15
+URxvt*color6: nord8
+URxvt*color7: nord5
+URxvt*color8: nord3
+URxvt*color9: nord11
+URxvt*color10: nord14
+URxvt*color11: nord13
+URxvt*color12: nord9
+URxvt*color13: nord15
+URxvt*color14: nord7
+URxvt*color15: nord6
+
+! old colors
+!URxvt*background:           #151515
+!URxvt*foreground:           #ebebeb
+!URxvt*color0:               #2d2d2d
+!URxvt*color1:               #705050
+!URxvt*color2:               #60b48a
+!URxvt*color3:               #dfaf8f
+!URxvt*color4:               #9ab8d7
+!URxvt*color5:               #dc8cc3
+!URxvt*color6:               #8cd0d3
+!URxvt*color7:               #dcdcdc
+!URxvt*color8:               #709080
+!URxvt*color9:               #dca3a3
+!URxvt*color10:              #72d5a3
+!URxvt*color11:              #f0dfaf
+!URxvt*color12:              #94bff3
+!URxvt*color13:              #ec93d3
+!URxvt*color14:              #93e0e3
+!!URxvt*color15:              #ffffff

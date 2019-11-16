@@ -5,6 +5,11 @@ set color_cwd
 set -x fish_user_paths "/usr/local/bin" $fish_user_paths
 set -x fish_user_paths "/usr/local/sbin" $fish_user_paths
 
+# X dpi scaling
+set -g -x GDK_SCALE 2
+set -g -x GDK_DPI_SCALE 0.5
+set -g -x QT_AUTO_SCREEN_SCALE_FACTOR 1
+
 # required by gpg-agent
 set -x GPG_TTY (tty)
 
