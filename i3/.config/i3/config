@@ -6,11 +6,11 @@ set $mod Mod4
 #---- graphics & display --------------------------------------------
 
 # Thinkpad X1
-exec_always xrandr --dpi 450
+#exec_always xrandr --dpi 450
 exec reload
 
 # DisplayPort 1
-exec_always xrandr --output DP1 --mode 2560x1440
+#exec_always xrandr --output DP1 --mode 2560x1440
 
 # screen temperature
 exec redshift
@@ -30,7 +30,7 @@ exec_always setxkbmap -layout us -option caps:swapescape
 exec xset r rate 200 20
 
 # start compton
-exec compton --config ~/.config/compton/config
+#exec compton --config ~/.config/compton/config
 
 # load X fonts via xset
 exec xset fp+ ~/.fonts

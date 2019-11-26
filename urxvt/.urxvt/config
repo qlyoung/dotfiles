@@ -6,8 +6,8 @@ URxvt*termName: rxvt-unicode
 
 ! font
 ! URxvt*font:               xft:Ubuntu Mono:medium:pixelsize=11,style=regular
-URxvt.font:                 xft:terminus:size=2.8
-URxvt*boldFont:             xft:terminus:size=3
+URxvt.font:                 xft:terminus:size=7
+URxvt*boldFont:             xft:terminus:size=7
 URxvt*letterSpace:          1
 
 ! url launcher
@@ -26,8 +26,15 @@ URxvt.mouseWheelScrollPage: false
 URxvt*cursorUnderline:      true
 
 ! scripts
-URxvt.perl-ext-common:      vtwheel
+URxvt.perl-ext-common:      vtwheel,resize-font
 URxvt.perl-ext:             default,matcher
+
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+URxvt.resize-font.step:   1
+
 
 ! misc
 URxvt*tripleclickwords:     true
