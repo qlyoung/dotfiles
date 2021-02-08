@@ -1,7 +1,7 @@
 # no greeting
 set fish_greeting ""
-set TERM xterm-256color
-set color_cwd
+# set TERM xterm-256color
+# set color_cwd
 set -x fish_user_paths "/usr/local/bin" $fish_user_paths
 set -x fish_user_paths "/usr/local/sbin" $fish_user_paths
 
@@ -15,7 +15,6 @@ set HOMEBREW_NO_ANALYTICS 1
 set -x EDITOR nvim
 alias vim nvim
 alias vimdiff 'nvim -d'
-alias rf 'sudo systemctl restart frr'
 
 # Shell prompt
 set fish_git_dirty_color red
@@ -32,7 +31,7 @@ function parse_git_branch
   end
 end
 
-function fish_prompt
+function fish_prompt_old
   set -l git_dir (git rev-parse --git-dir 2> /dev/null)
   if test -n "$git_dir"
     printf '%s@%s [%s] %s%s%s> ' (whoami) (hostname|cut -d . -f 1) (parse_git_branch) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
