@@ -6,3 +6,5 @@
 	ui = auto
 [core]
 	editor = vim
+[merge]
+	conflictstyle = diff3
