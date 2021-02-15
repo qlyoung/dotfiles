@@ -30,7 +30,7 @@ exec xset fp rehash
 exec_always xrdb -merge ~/.urxvt/config
 
 # set titlebars & borders to none
-new_window none
+default_border none
 
 # hide screen edge borders
 hide_edge_borders both
