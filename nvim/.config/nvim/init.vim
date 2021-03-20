@@ -59,6 +59,7 @@ Plug 'hiphish/jinja.vim'
 Plug 'nathanalderson/yang.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'zah/nim.vim'
 call plug#end()
 
 "set color scheme
