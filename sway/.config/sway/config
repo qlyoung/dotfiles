@@ -8,7 +8,8 @@ set $mod Mod4
 xwayland scale 3
 
 # set desktop wallpaper
-exec_always swaybg -i /opt/background.png
+exec_always swaybg -m fill -i /opt/background.png
+exec_always swaybg -m fill -i /opt/background.jpg
 
 # set keyboard repeat rate
 exec xset r 200 20
