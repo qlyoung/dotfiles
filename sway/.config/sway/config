@@ -46,6 +46,7 @@ for_window [app_id="Alacritty"] border pixel 2
 # This is required for systemd user services such as gammastep to work properly
 # when they expect system environment variables to be available
 exec systemctl --user import-environment
+exec systemctl --user start gammastep
 
 #---- keybindings ---------------------------------------------------
 
