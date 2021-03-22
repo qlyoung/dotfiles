@@ -4,14 +4,45 @@
 ! $TERM
 URxvt*termName: rxvt-unicode
 
+! Nord color scheme
+! -----------------
+
+! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
+
+! Project:    Nord XResources
+! Version:    0.1.0
+! Repository: https://github.com/arcticicestudio/nord-xresources
+! License:    MIT
+
+#define bgcol #1D1B1F
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+! -----------------
+
 ! font
 ! URxvt*font:               xft:Ubuntu Mono:medium:pixelsize=11,style=regular
-URxvt.font:                 xft:terminus:size=7
-URxvt*boldFont:             xft:terminus:size=7
+URxvt.font:                 xft:terminus:size=15
+URxvt*boldFont:             xft:terminus:size=15
 URxvt*letterSpace:          1
 
 ! url launcher
-!URxvt*urlLauncher:          chromium-browser
+!URxvt*urlLauncher:         firefox
 
 ! scrolling
 URxvt*scrollBar:            false
@@ -24,6 +55,9 @@ URxvt.mouseWheelScrollPage: false
 
 ! cursor
 URxvt*cursorUnderline:      true
+
+! internal border
+URxvt.borderColor: nord0
 
 ! scripts
 URxvt.perl-ext-common:      vtwheel,resize-font
@@ -42,39 +76,12 @@ URxvt*urlLauncher:          /usr/bin/chromium-browser
 URxvt*matcher.Button:       1
 
 
-! Nord color scheme
-! -----------------
-
-! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
-
-! Project:    Nord XResources
-! Version:    0.1.0
-! Repository: https://github.com/arcticicestudio/nord-xresources
-! License:    MIT
-
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
-
 URxvt*foreground:   nord4
-URxvt*background:   nord0
+URxvt*background:   bgcol
 URxvt*cursorColor:  nord4
-URxvt*fading: 35
-URxvt*fadeColor: nord3
+! Color when window is not focused
+URxvt*fading: 0
+URxvt*fadeColor: bgcol
 
 URxvt*color0: nord1
 URxvt*color1: nord11
