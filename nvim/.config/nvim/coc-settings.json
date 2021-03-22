@@ -10,5 +10,6 @@
          }
        }
     }
-  }
+  },
+  "python.jediEnabled": false
 }

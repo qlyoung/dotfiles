@@ -54,11 +54,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'ambv/black'
 Plug 'universal-ctags/ctags'
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'hiphish/jinja.vim'
 Plug 'nathanalderson/yang.vim'
-Plug 'davidhalter/jedi-vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'nathanalderson/yang'
 call plug#end()
 
 "set color scheme
