@@ -4,6 +4,15 @@ set TERM xterm-256color
 set color_cwd
 set -x fish_user_paths "/usr/local/bin" $fish_user_paths
 set -x fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -x fish_user_paths "/usr/local/go/bin" $fish_user_paths
+set -x GOPATH /home/qlyoung/go
+set -x fish_user_paths "$GOPATH/bin" $fish_user_paths
+set -x fish_user_paths "/home/qlyoung/.cargo/bin" $fish_user_paths
+set -x fish_user_paths "$HOME/.poetry/bin" $fish_user_paths
+
+# set -x fish_user_paths (dirname (go list -f '{{.Target}}' .)) $fish_user_paths
+
+# alias clear "math (random) \% 10 == 0; and timeout 2 cbeams -o; clear; or clear"
 
 # X dpi scaling
 #set -g -x GDK_SCALE 2
@@ -25,6 +34,10 @@ alias rf 'sudo systemctl restart frr'
 # Shell prompt
 set fish_git_dirty_color red
 set fish_git_not_dirty_color green
+
+function cb
+  echo (git status -sb | head -n 1 | cut -d' ' -f2)
+end
 
 function parse_git_branch
   set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
