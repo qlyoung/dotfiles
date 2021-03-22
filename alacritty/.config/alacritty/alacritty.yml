@@ -1,0 +1,6 @@
+font:
+        size: 8
+        normal:
+                family: Terminus
+cursor:
+        style: Underline

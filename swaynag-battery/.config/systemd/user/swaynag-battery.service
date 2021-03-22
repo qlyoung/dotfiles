@@ -1,0 +1,10 @@
+[Unit]
+Description=Low battery notification
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swaynag-battery
+
+[Install]
+WantedBy=sway-session.target

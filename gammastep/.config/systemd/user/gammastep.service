@@ -1,0 +1,10 @@
+[Unit]
+Description=gammastep
+
+[Service]
+Type=simple
+StandardOutput=journal
+ExecStart=/usr/bin/gammastep
+
+[Install]
+WantedBy=graphical-session.target

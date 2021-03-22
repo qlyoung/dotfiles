@@ -3,37 +3,23 @@
 # modkey
 set $mod Mod4
 
-#---- graphics & display --------------------------------------------
-
-# Thinkpad X1
-
-# screen temperature
-exec redshift
 
 #---- miscellaneous settings ----------------------------------------
+xwayland scale 3
 
 # set desktop wallpaper
-exec_always feh --bg-fill /opt/wallpaper.jpg
-
-# screen locker
-# exec xss-lock -- i3lock-fancy.sh
-
-# swap escape and capslock
-# exec_always setxkbmap -layout us -option caps:swapescape
+exec_always swaybg -m fill -i /opt/background.png
+exec_always swaybg -m fill -i /opt/background.jpg
 
 # set keyboard repeat rate
-exec xset r rate 200 20
-
-# start compton
-# exec picom --config ~/.config/compton/config
+exec xset r 200 20
 
 # load X fonts via xset
 exec xset fp+ ~/.fonts
 exec xset fp rehash
 
-# synchronize cutbuffer and primary select
-exec autocutsel -fork
-exec autocutsel -selection PRIMARY -fork
+# load Xresources
+exec_always xrdb -merge ~/.Xresources
 
 # set titlebars & borders to none
 default_border none
@@ -48,30 +34,31 @@ client.unfocused            #222222 #222222 #888888 #292d2e
 client.urgent               #2f343a #900000 #ffffff #900000
 
 # font for window title bars
-font Terminus
+font Terminus 8
 
 # make feh float
 for_window [class="feh" instance="feh"] floating enable
 
+# turn on borders for urxvt windows
+for_window [app_id="Alacritty"] border pixel 2
+
+# Import global environment variables into systemd user environment
+# This is required for systemd user services such as gammastep to work properly
+# when they expect system environment variables to be available
+exec systemctl --user import-environment
+exec systemctl --user start gammastep
+
 #---- keybindings ---------------------------------------------------
 
-# bind u to enable laptop monitor
-# bindsym $mod+u exec xrandr --output LVDS1 --mode 1366x768
-
 # bind volume keys
-bindsym XF86AudioRaiseVolume exec "amixer -q set Master 0.3dB+ unmute && killall -SIGUSR1 i3status"
-bindsym XF86AudioLowerVolume exec "amixer -q set Master 0.3dB- unmute && killall -SIGUSR1 i3status"
-bindsym XF86AudioMute exec "amixer -D pulse set Master Playback Switch toggle && killall -SIGUSR1 i3status"
-
-# bind thinkvantage key to locking script
-# bindsym XF86Launch1 exec i3lock-fancy.sh
-# bindsym $mod+q exec i3lock-fancy.sh
+#
+# how do?
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+x kill
@@ -81,9 +68,6 @@ bindsym $mod+d exec "rofi -color-normal '#002B36,#40AF96,#002B36,#576D74,#EDE7D4
 bindsym $mod+c exec "rofi -color-normal '#002B36,#40AF96,#002B36,#576D74,#EDE7D4' -color-window '#002B36,#40AF96,#002B36' -separator-style none -show window"
 bindsym $mod+s exec "rofi -color-normal '#002B36,#40AF96,#002B36,#576D74,#EDE7D4' -color-window '#002B36,#40AF96,#002B36' -separator-style none -show ssh"
 
-# start splatmoji
-bindsym $mod+slash exec "/usr/local/bin/splatmoji/splatmoji type"
-
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run -b -nb "#111111" -sb "#484848" -fn '-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1' -dim .5
 
@@ -91,14 +75,11 @@ bindsym $mod+slash exec "/usr/local/bin/splatmoji/splatmoji type"
 bindsym $mod+t exec nautilus
 
 # bind o and p to prev / next song in moc
-# bindsym $mod+o exec mocp -r
-# bindsym $mod+p exec mocp -f
+bindsym $mod+o exec mocp -r
+bindsym $mod+p exec mocp -f
 
 # bind i to pause moc
-# bindsym $mod+i exec mocp -G
-
-# bind p to pavucontrol
-bindsym $mod+p exec pavucontrol-qt
+bindsym $mod+i exec mocp -G
 
 # change focus
 bindsym $mod+j focus left
@@ -177,11 +158,11 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart sway inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'For real?' -b 'Yeah' 'swaymsg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -209,16 +190,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+input "type:keyboard" {
+	xkb_layout us
+	xkb_options caps:swapescape
+}
+
 
 #---- bar -----------------------------------------------------------
 
-# Start i3bar to display a workspace bar (plus the system information i3status
+# Start sway-bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     colors {
-        background #151515
+        background #0A0A0A
        #statusline #CCCCCC
         statusline #99d6ff
+        statusline #ff86ff
         separator  #666666
 
         #workspace chooser       border  backgr. text
@@ -230,6 +217,5 @@ bar {
 
     position top
     status_command i3status
-#   font pango:Ubuntu Mono, Icons 10
-    font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+    font Terminus 8
 }
