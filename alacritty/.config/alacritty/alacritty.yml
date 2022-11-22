@@ -4,3 +4,5 @@ font:
                 family: Terminus
 cursor:
         style: Underline
+env:
+        TERM: xterm-256color
