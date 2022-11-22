@@ -21,11 +21,11 @@ set nofoldenable
 nmap <silent> gd <Plug>(coc-definition)
 
 "highlight colors
-hi Search cterm=NONE ctermfg=white ctermbg=blue
+hi Search cterm=none ctermfg=white ctermbg=blue
 
 "clang-format
-map <C-k> :pyf /usr/local/bin/clang-format.py<CR>
-imap <C-k> <c-o> :pyf /usr/local/bin/clang-format.py<CR>
+map <C-k> :py3f /usr/share/clang/clang-format.py<CR>
+imap <C-k> <c-o> :py3f /usr/share/clang/clang-format.py<CR>
 let g:clang_format_path='/usr/bin/clang-format'
 
 "airline
@@ -39,6 +39,9 @@ set laststatus=2
 let g:table_mode_corner_corner='+'
 let g:table_mode_header_fillchar='='
 
+"disable ALE lsp server
+let g:ale_disable_lsp = 1
+
 "misc
 command RemoveTrailingWhitespace %s/\s\+$//
 "automatically remove trailing whitespace on :w
@@ -50,18 +53,25 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
-" Plug 'oblitum/YouCompleteMe'
-Plug 'ambv/black'
+silent Plug 'ambv/black'
 Plug 'universal-ctags/ctags'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'hiphish/jinja.vim'
 Plug 'nathanalderson/yang.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'nathanalderson/yang'
 Plug 'zah/nim.vim'
+Plug 'savq/melange'
+Plug 'dense-analysis/ale'
 call plug#end()
+
+if exists('$TMUX')
+    " Colors in tmux
+    let &t_8f = "<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "<Esc>[48;2;%lu;%lu;%lum"
+endif
 
 "set color scheme
 "colorscheme sourcerer
-colorscheme nord
+set background=dark
+set termguicolors
+colorscheme melange

@@ -11,5 +11,6 @@
        }
     }
   },
+  "diagnostic.displayByAle": true,
   "python.jediEnabled": false
 }
