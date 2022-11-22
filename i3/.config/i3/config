@@ -8,18 +8,21 @@ set $mod Mod4
 # Thinkpad X1
 
 # screen temperature
-exec redshift
+# exec_always gammastep -m randr -l 40.7:-74 -t 6500:3000
 
 #---- miscellaneous settings ----------------------------------------
 
+# battery warning
+exec --no-startup-id i3-battery-popup
+
 # set desktop wallpaper
-exec_always feh --bg-fill /opt/wallpaper.jpg
+exec_always feh --bg-fill /opt/wallpaper
 
 # screen locker
 # exec xss-lock -- i3lock-fancy.sh
 
 # swap escape and capslock
-# exec_always setxkbmap -layout us -option caps:swapescape
+exec_always setxkbmap -layout us -option caps:swapescape
 
 # set keyboard repeat rate
 exec xset r rate 200 20
@@ -36,7 +39,7 @@ exec autocutsel -fork
 exec autocutsel -selection PRIMARY -fork
 
 # set titlebars & borders to none
-default_border none
+default_border pixel 1
 
 # hide screen edge borders
 hide_edge_borders both
@@ -48,7 +51,7 @@ client.unfocused            #222222 #222222 #888888 #292d2e
 client.urgent               #2f343a #900000 #ffffff #900000
 
 # font for window title bars
-font Terminus
+font pango:monospace 6
 
 # make feh float
 for_window [class="feh" instance="feh"] floating enable
@@ -57,6 +60,14 @@ for_window [class="feh" instance="feh"] floating enable
 
 # bind u to enable laptop monitor
 # bindsym $mod+u exec xrandr --output LVDS1 --mode 1366x768
+
+# rofi-pass
+bindsym $mod+p exec rofi-pass
+
+
+# open terminal
+bindsym $mod+n exec alacritty
+bindsym $mod+Return exec alacritty
 
 # bind volume keys
 bindsym XF86AudioRaiseVolume exec "amixer -q set Master 0.3dB+ unmute && killall -SIGUSR1 i3status"
@@ -70,16 +81,16 @@ bindsym XF86AudioMute exec "amixer -D pulse set Master Playback Switch toggle &&
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec urxvt
-
 # kill focused window
 bindsym $mod+x kill
 
 # start rofi
 bindsym $mod+d exec "rofi -color-normal '#002B36,#40AF96,#002B36,#576D74,#EDE7D4' -color-window '#002B36,#40AF96,#002B36' -separator-style none -show run"
 bindsym $mod+c exec "rofi -color-normal '#002B36,#40AF96,#002B36,#576D74,#EDE7D4' -color-window '#002B36,#40AF96,#002B36' -separator-style none -show window"
-bindsym $mod+s exec "rofi -color-normal '#002B36,#40AF96,#002B36,#576D74,#EDE7D4' -color-window '#002B36,#40AF96,#002B36' -separator-style none -show ssh"
+# bindsym $mod+s exec "rofi -color-normal '#002B36,#40AF96,#002B36,#576D74,#EDE7D4' -color-window '#002B36,#40AF96,#002B36' -separator-style none -show ssh"
+
+# start flameshot
+bindsym $mod+s exec "flameshot gui"
 
 # start splatmoji
 bindsym $mod+slash exec "/usr/local/bin/splatmoji/splatmoji type"
@@ -98,7 +109,7 @@ bindsym $mod+t exec nautilus
 # bindsym $mod+i exec mocp -G
 
 # bind p to pavucontrol
-bindsym $mod+p exec pavucontrol-qt
+# bindsym $mod+p exec pavucontrol-qt
 
 # change focus
 bindsym $mod+j focus left
@@ -230,6 +241,8 @@ bar {
 
     position top
     status_command i3status
+	# font for window title bars
+	font pango:monospace 6
 #   font pango:Ubuntu Mono, Icons 10
-    font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+    #font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 }
